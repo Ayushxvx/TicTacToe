@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <style>
+        body{
+            color:white;
+            font-family:monospace;
+        }
+        .main_div{
+            border: 2px solid white;
+            border-radius:20px;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            width:30%;
+            height:300px;
+        }
+        .f1{
+            display:flex;
+            justify-content:flex-start;
+        }
+        .block{
+            color:black;
+            font-size:2em;
+            border:1px solid white;
+            width:33%;
+            height:100px;
+            cursor:pointer;
+            border-radius:10px;
+        }
+        .bt{
+            margin-top:30px;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
+        }
+        h1{
+            background-color: red;
+            color:white;
+            text-align:center;
+            font-family:monospace;
+            padding:10px;
+        }
+        button{
+            color:black;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            padding:20px;
+            text-align:center;
+            border-radius:20px;
+            background-image: linear-gradient(to right,purple,blue,cyan);
+            font-weight:bold;
+            cursor:pointer;
+        }
+        button:hover{
+            color:white;
+        }
+    </style>
+</head>
+<body bgcolor="black">
+    <br><br><br><br><br><br><br>
+    <h1 id="winner">
+        Winner :- 
+    </h1>
+    <br><br><br><br>
+    <div class="main_div">
+        <div class="f1">
+            <span id="block1" class="block"><span id="blockt1" class="bt"></span></span>
+            <span id="block2" class="block"><span id="blockt2" class="bt"></span></span>
+            <span id="block3" class="block"><span id="blockt3" class="bt"></span></span>
+        </div>
+        <div class="f1">
+            <span id="block4" class="block"><span id="blockt4" class="bt"></span></span>
+            <span id="block5" class="block"><span id="blockt5" class="bt"></span></span>
+            <span id="block6" class="block"><span id="blockt6" class="bt"></span></span>
+        </div>
+        <div class="f1">
+            <span id="block7" class="block"><span id="blockt7"class="bt"></span></span>
+            <span id="block8" class="block"><span id="blockt8"class="bt"></span></span>
+            <span id="block9" class="block"><span id="blockt9"class="bt"></span></span>
+        </div>
+    </div>
+    <br>
+    <button onclick="reset()">RESET</button>
+    <script>
+        const winner = document.getElementById("winner");
+        let count = 0;
+        document.getElementById("block1").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block1").style.backgroundColor="red";
+                document.getElementById("blockt1").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block1").style.backgroundColor="red";
+                document.getElementById("blockt1").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block1").style.backgroundColor="green";
+                document.getElementById("blockt1").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block2").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block2").style.backgroundColor="red";
+                document.getElementById("blockt2").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block2").style.backgroundColor="red";
+                document.getElementById("blockt2").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block2").style.backgroundColor="green";
+                document.getElementById("blockt2").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block3").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block3").style.backgroundColor="red";
+                document.getElementById("blockt3").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block3").style.backgroundColor="red";
+                document.getElementById("blockt3").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block3").style.backgroundColor="green";
+                document.getElementById("blockt3").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block4").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block4").style.backgroundColor="red";
+                document.getElementById("blockt4").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block4").style.backgroundColor="red";
+                document.getElementById("blockt4").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block4").style.backgroundColor="green";
+                document.getElementById("blockt4").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block5").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block5").style.backgroundColor="red";
+                document.getElementById("blockt5").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block5").style.backgroundColor="red";
+                document.getElementById("blockt5").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block5").style.backgroundColor="green";
+                document.getElementById("blockt5").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block6").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block6").style.backgroundColor="red";
+                document.getElementById("blockt6").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block6").style.backgroundColor="red";
+                document.getElementById("blockt6").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block6").style.backgroundColor="green";
+                document.getElementById("blockt6").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block7").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block7").style.backgroundColor="red";
+                document.getElementById("blockt7").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block7").style.backgroundColor="red";
+                document.getElementById("blockt7").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block7").style.backgroundColor="green";
+                document.getElementById("blockt7").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block8").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("blockt8").innerText="X";
+                document.getElementById("block8").style.backgroundColor="red";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block8").style.backgroundColor="red";
+                document.getElementById("blockt8").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block8").style.backgroundColor="green";
+                document.getElementById("blockt8").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        document.getElementById("block9").addEventListener("click",function(){
+            if (count==0){
+                document.getElementById("block9").style.backgroundColor="red";
+                document.getElementById("blockt9").innerText="X";
+                count++;
+            }
+            else if(count%2==0){
+                document.getElementById("block9").style.backgroundColor="red";
+                document.getElementById("blockt9").innerText="X";
+                count++;
+            }
+            else if(count%2==1){
+                document.getElementById("block9").style.backgroundColor="green";
+                document.getElementById("blockt9").innerText="O";
+                count++;
+            }
+            checkforwinner();
+        })
+        function checkforwinner(){
+        if(document.getElementById("block1").style.backgroundColor=="red" && document.getElementById("block2").style.backgroundColor=="red" && document.getElementById("block3").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block1").style.backgroundColor=="green" && document.getElementById("block2").style.backgroundColor=="green" && document.getElementById("block3").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block4").style.backgroundColor=="red" && document.getElementById("block5").style.backgroundColor=="red" && document.getElementById("block6").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block4").style.backgroundColor=="green" && document.getElementById("block5").style.backgroundColor=="green" && document.getElementById("block6").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block7").style.backgroundColor=="red" && document.getElementById("block8").style.backgroundColor=="red" && document.getElementById("block9").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block7").style.backgroundColor=="green" && document.getElementById("block8").style.backgroundColor=="green" && document.getElementById("block9").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block1").style.backgroundColor=="red" && document.getElementById("block4").style.backgroundColor=="red" && document.getElementById("block7").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block1").style.backgroundColor=="green" && document.getElementById("block4").style.backgroundColor=="green" && document.getElementById("block7").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block2").style.backgroundColor=="red" && document.getElementById("block5").style.backgroundColor=="red" && document.getElementById("block8").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block2").style.backgroundColor=="green" && document.getElementById("block5").style.backgroundColor=="green" && document.getElementById("block8").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block3").style.backgroundColor=="red" && document.getElementById("block6").style.backgroundColor=="red" && document.getElementById("block9").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block3").style.backgroundColor=="green" && document.getElementById("block6").style.backgroundColor=="green" && document.getElementById("block9").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        if(document.getElementById("block1").style.backgroundColor=="red" && document.getElementById("block5").style.backgroundColor=="red" && document.getElementById("block9").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block1").style.backgroundColor=="green" && document.getElementById("block5").style.backgroundColor=="green" && document.getElementById("block9").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }     
+        if(document.getElementById("block3").style.backgroundColor=="red" && document.getElementById("block5").style.backgroundColor=="red" && document.getElementById("block7").style.backgroundColor=="red")
+            {
+                winner.innerText= "Player 1 Wins";
+            }
+        if(document.getElementById("block3").style.backgroundColor=="green" && document.getElementById("block5").style.backgroundColor=="green" && document.getElementById("block7").style.backgroundColor=="green")
+            {
+                winner.innerText= "Player 2 Wins";
+            }
+        setTimeout(function(){
+            location.reload(true)
+        },20000);
+        }
+        function reset(){
+            location.reload(true);
+        }
+    </script>
+</body>
+</html>
